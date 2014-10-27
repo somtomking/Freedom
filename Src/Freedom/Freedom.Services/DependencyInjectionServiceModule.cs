@@ -13,7 +13,7 @@ namespace Freedom.Services
     {
         protected override void Load(ContainerBuilder builder)
         {
-            builder.RegisterType<ICustomerService>().As<CustomerService>();
+            builder.RegisterType<CustomerService>().As<ICustomerService>();
              
         }
     }

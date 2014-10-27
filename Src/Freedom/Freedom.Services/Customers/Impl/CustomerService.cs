@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Freedom.Services.Customers.Impl
 {
-    public partial class CustomerService
+    public partial class CustomerService : ICustomerService
     {
 
     }

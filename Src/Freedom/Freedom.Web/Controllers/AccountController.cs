@@ -7,15 +7,15 @@ using System.Web.Mvc;
 
 namespace Freedom.Web.Controllers
 {
-    public class HomeController : Controller
+    public class AccountController : Controller
     {
-       
-        public HomeController()
+        private readonly ICustomerService _customerService;
+        public AccountController(ICustomerService customerService)
         {
-          
+            _customerService = customerService;
         }
         //
-        // GET: /Home/
+        // GET: /Account/
         public ActionResult Index()
         {
             return View();
