@@ -15,6 +15,7 @@ using Freedom.Data;
 using Freedom.Services;
 using System.Reflection;
 using System.Web.Optimization;
+using Freedom.Web.Framework.Themes;
 
 namespace Freedom.Web
 {
@@ -32,6 +33,9 @@ namespace Freedom.Web
             DependencyResolver.SetResolver(new AutofacDependencyResolver(container));
             GlobalConfiguration.Configuration.DependencyResolver = new AutofacWebApiDependencyResolver(container);
 
+            ViewEngines.Engines.Clear();
+            //except the themeable razor view engine we use
+            ViewEngines.Engines.Add(new ThemeableRazorViewEngine());
 
             AreaRegistration.RegisterAllAreas();
             GlobalConfiguration.Configure(WebApiConfig.Register);

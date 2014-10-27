@@ -11,7 +11,7 @@ namespace Freedom.Web.Framework.Themes
     {
 
         private readonly IThemeProvider _themeProvider;
-
+        private string _theThemeName = string.Empty;
 
 
         public ThemeContext(
@@ -22,12 +22,22 @@ namespace Freedom.Web.Framework.Themes
         }
 
         /// <summary>
-        /// Get or set current theme system name
+        /// Get or  current theme system name
         /// </summary>
         public string WorkingThemeName
         {
-            get;
-            set;
+            get
+            {
+                if (string.IsNullOrEmpty(_theThemeName))
+                {
+                    _theThemeName = System.Configuration.ConfigurationManager.AppSettings["CurrentThemeName"];
+                }
+                return _theThemeName;
+
+            }
+            set { }
+
+
         }
     }
 }

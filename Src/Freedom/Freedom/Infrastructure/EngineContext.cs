@@ -27,7 +27,8 @@ namespace Freedom.Infrastructure
         {
             if (Singleton<IEngine>.Instance == null || forceRecreate)
             {
-                
+                Engine engine = new Engine();
+                Singleton<IEngine>.Instance = engine;
             }
             return Singleton<IEngine>.Instance;
         }
