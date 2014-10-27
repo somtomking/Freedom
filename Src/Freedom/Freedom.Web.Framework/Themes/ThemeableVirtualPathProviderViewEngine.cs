@@ -224,11 +224,7 @@ namespace Freedom.Web.Framework.Themes
             return new ViewEngineResult(this.CreatePartialView(controllerContext, str2), this);
 
         }
-
-        //protected override bool FileExists(ControllerContext controllerContext, string virtualPath)
-        //{
-        //    return BuildManager.GetObjectFactory(virtualPath, false) != null;
-        //}
+ 
 
         #endregion
 
