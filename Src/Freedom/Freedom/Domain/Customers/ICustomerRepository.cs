@@ -10,7 +10,9 @@ namespace Freedom.Domain.Customers
     {
         Customer GetById(long id);
 
-        
+        void Update(Customer customer);
+        void Add(Customer customer);
+
 
     }
 }
