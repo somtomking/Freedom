@@ -14,6 +14,7 @@ using Autofac.Features.ResolveAnything;
 using Freedom.Data;
 using Freedom.Services;
 using System.Reflection;
+using System.Web.Optimization;
 
 namespace Freedom.Web
 {
@@ -31,9 +32,11 @@ namespace Freedom.Web
             DependencyResolver.SetResolver(new AutofacDependencyResolver(container));
             GlobalConfiguration.Configuration.DependencyResolver = new AutofacWebApiDependencyResolver(container);
 
+
             AreaRegistration.RegisterAllAreas();
             GlobalConfiguration.Configure(WebApiConfig.Register);
             RouteConfig.RegisterRoutes(RouteTable.Routes);
+            BundleConfig.RegisterBundles(BundleTable.Bundles);
         }
     }
 }

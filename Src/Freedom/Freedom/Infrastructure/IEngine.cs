@@ -8,5 +8,8 @@ namespace Freedom.Infrastructure
 {
     public partial interface IEngine
     {
+        T Resolve<T>() where T : class;
+        object Resolve(Type type);
+        T[] ResolveAll<T>();
     }
 }

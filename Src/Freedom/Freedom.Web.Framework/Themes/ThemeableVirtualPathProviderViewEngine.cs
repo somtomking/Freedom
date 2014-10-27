@@ -144,10 +144,9 @@ namespace Freedom.Web.Framework.Themes
 
         protected virtual string GetCurrentTheme()
         {
-            //var themeContext = EngineContext.Current.Resolve<IThemeContext>();
-            //return themeContext.WorkingThemeName;
-
-            throw new NotImplementedException();
+            
+            return Ioc.Resolve<IThemeContext>().WorkingThemeName;
+         
         }
 
         protected virtual string GetAreaName(RouteData routeData)
@@ -224,7 +223,7 @@ namespace Freedom.Web.Framework.Themes
             return new ViewEngineResult(this.CreatePartialView(controllerContext, str2), this);
 
         }
- 
+
 
         #endregion
 
