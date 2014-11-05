@@ -1,4 +1,6 @@
 ﻿using Autofac;
+using Autofac.Integration.Mvc;
+using Autofac.Integration.WebApi;
 using Freedom.Infrastructure;
 using Freedom.Infrastructure.DependencyManagement;
 using Freedom.Web.Framework.Themes;
@@ -14,6 +16,9 @@ namespace Freedom.Web.Framework
     {
         public void Register(ContainerBuilder builder, ITypeFinder typeFinder)
         {
+            //controllers
+            builder.RegisterControllers(typeFinder.GetAssemblies().ToArray());
+            //theme
             builder.RegisterType<ThemeProvider>().As<IThemeProvider>().InstancePerLifetimeScope();
             builder.RegisterType<ThemeContext>().As<IThemeContext>().InstancePerLifetimeScope();
         }

@@ -4,6 +4,7 @@ using Freedom.Infrastructure.DependencyManagement;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -13,8 +14,7 @@ namespace Freedom.Services
     {
         public void Register(ContainerBuilder builder, ITypeFinder typeFinder)
         {
-            
-            
+            builder.RegisterAssemblyTypes(Assembly.GetExecutingAssembly());
         }
 
         public int Order

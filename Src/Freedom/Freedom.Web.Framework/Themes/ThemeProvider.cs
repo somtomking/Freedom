@@ -51,7 +51,7 @@ namespace Freedom.Web.Framework.Themes
         #endregion
 
         #region Utility
-
+        //todo:迁移到工具类
         private string GetBasePath(string path)
         {
             if (HostingEnvironment.IsHosted)
