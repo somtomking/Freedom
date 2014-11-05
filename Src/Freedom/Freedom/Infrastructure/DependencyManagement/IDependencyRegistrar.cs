@@ -1,5 +1,5 @@
 ﻿using Autofac;
-using Nop.Core.Infrastructure;
+ 
 
 namespace Freedom.Infrastructure.DependencyManagement
 {

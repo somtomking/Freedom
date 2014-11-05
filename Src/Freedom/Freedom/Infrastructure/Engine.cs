@@ -1,13 +1,15 @@
 ﻿using Autofac;
 using Autofac.Integration.Mvc;
+using Autofac.Integration.WebApi;
 using Freedom.Configuration;
 using Freedom.Infrastructure.DependencyManagement;
-using Nop.Core.Infrastructure;
+ 
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Web.Http;
 using System.Web.Mvc;
 
 namespace Freedom.Infrastructure
@@ -90,6 +92,7 @@ namespace Freedom.Infrastructure
 
             //set dependency resolver
             DependencyResolver.SetResolver(new AutofacDependencyResolver(container));
+            GlobalConfiguration.Configuration.DependencyResolver = new AutofacWebApiDependencyResolver(container);
         }
         public void Initialize(AppConfig config)
         {

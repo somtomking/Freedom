@@ -1,4 +1,5 @@
 ﻿using Freedom.Configuration;
+using Freedom.Infrastructure.DependencyManagement;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -13,5 +14,6 @@ namespace Freedom.Infrastructure
         T Resolve<T>() where T : class;
         object Resolve(Type type);
         T[] ResolveAll<T>();
+        ContainerManager ContainerManager { get; }
     }
 }

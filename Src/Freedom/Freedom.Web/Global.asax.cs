@@ -16,6 +16,7 @@ using Freedom.Services;
 using System.Reflection;
 using System.Web.Optimization;
 using Freedom.Web.Framework.Themes;
+using Freedom.Infrastructure;
 
 namespace Freedom.Web
 {
@@ -23,15 +24,18 @@ namespace Freedom.Web
     {
         void Application_Start(object sender, EventArgs e)
         {
-            var builder = new ContainerBuilder();
-            builder.RegisterSource(new AnyConcreteTypeNotAlreadyRegisteredSource());
-            builder.RegisterModule(new DependencyInjectionDataModule());
-            builder.RegisterModule(new DependencyInjectionServiceModule());
-            builder.RegisterControllers(Assembly.GetExecutingAssembly());
-            var container = builder.Build();
 
-            DependencyResolver.SetResolver(new AutofacDependencyResolver(container));
-            GlobalConfiguration.Configuration.DependencyResolver = new AutofacWebApiDependencyResolver(container);
+            EngineContext.Initialize(false);
+            
+            //var builder = new ContainerBuilder();
+            //builder.RegisterSource(new AnyConcreteTypeNotAlreadyRegisteredSource());
+            //builder.RegisterModule(new DependencyInjectionDataModule());
+            //builder.RegisterModule(new DependencyInjectionServiceModule());
+            //builder.RegisterControllers(Assembly.GetExecutingAssembly());
+            //var container = builder.Build();
+            
+            //DependencyResolver.SetResolver(new AutofacDependencyResolver(container));
+            //GlobalConfiguration.Configuration.DependencyResolver = new AutofacWebApiDependencyResolver(EngineContext.Current.ContainerManager.Container);
 
             ViewEngines.Engines.Clear();
             //except the themeable razor view engine we use
