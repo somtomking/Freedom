@@ -9,8 +9,8 @@ namespace Freedom.Web.Controllers
 {
     public class AccountController : Controller
     {
-        private readonly ICustomerService _customerService;
-        public AccountController(ICustomerService customerService)
+        private readonly CustomerService _customerService;
+        public AccountController(CustomerService customerService)
         {
             _customerService = customerService;
         }

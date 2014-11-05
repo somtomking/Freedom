@@ -42,9 +42,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Customers\ICustomerService.cs" />
-    <Compile Include="Customers\Impl\CustomerService.cs" />
-    <Compile Include="DependencyInjectionServiceModule.cs" />
+    <Compile Include="Customers\CustomerService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

@@ -1,9 +1,9 @@
 ﻿using Autofac;
+using Autofac.Features.ResolveAnything;
 using Autofac.Integration.Mvc;
 using Autofac.Integration.WebApi;
 using Freedom.Configuration;
 using Freedom.Infrastructure.DependencyManagement;
- 
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -70,6 +70,7 @@ namespace Freedom.Infrastructure
             //dependencies
             var typeFinder = new WebAppTypeFinder(config);
             builder = new ContainerBuilder();
+            builder.RegisterSource(new AnyConcreteTypeNotAlreadyRegisteredSource());
             builder.RegisterInstance(config).As<AppConfig>().SingleInstance();
             builder.RegisterInstance(this).As<IEngine>().SingleInstance();
             builder.RegisterInstance(typeFinder).As<ITypeFinder>().SingleInstance();

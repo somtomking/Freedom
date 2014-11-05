@@ -6,7 +6,8 @@ using System.Threading.Tasks;
 
 namespace Freedom.Services.Customers
 {
-    public partial interface ICustomerService
+    public partial class CustomerService
     {
+
     }
 }
