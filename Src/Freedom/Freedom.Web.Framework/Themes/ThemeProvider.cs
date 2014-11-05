@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Freedom.Configuration;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -18,10 +19,10 @@ namespace Freedom.Web.Framework.Themes
 
         #region Constructors
 
-        public ThemeProvider()
+        public ThemeProvider(AppConfig config)
         {
             //TODO:这里是写死了
-            basePath = System.Web.HttpContext.Current.Server.MapPath("~/Themes");
+            basePath = System.Web.HttpContext.Current.Server.MapPath(config.ThemeBasePath);
             LoadConfigurations();
         }
 
