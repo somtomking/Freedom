@@ -26,12 +26,13 @@ namespace Freedom.Web
         {
 
             EngineContext.Initialize(false);
-            
+
             //var builder = new ContainerBuilder();
             //builder.RegisterSource(new AnyConcreteTypeNotAlreadyRegisteredSource());
             //builder.RegisterModule(new DependencyInjectionDataModule());
             //builder.RegisterModule(new DependencyInjectionServiceModule());
             //builder.RegisterControllers(Assembly.GetExecutingAssembly());
+            
             //var container = builder.Build();
             
             //DependencyResolver.SetResolver(new AutofacDependencyResolver(container));

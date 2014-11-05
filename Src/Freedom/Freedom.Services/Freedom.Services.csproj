@@ -43,10 +43,21 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Customers\CustomerService.cs" />
+    <Compile Include="DependencyRegistrar.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Freedom.Data\Freedom.Data.csproj">
+      <Project>{a47eae48-ace4-40d2-8817-8f95be2d7e9e}</Project>
+      <Name>Freedom.Data</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Freedom\Freedom.csproj">
+      <Project>{fcce2858-3ad1-4406-ba31-48ee70eea4a5}</Project>
+      <Name>Freedom</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

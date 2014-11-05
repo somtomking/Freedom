@@ -49,7 +49,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="DependencyInjectionDataModule.cs" />
     <Compile Include="DependencyRegistrar.cs" />
     <Compile Include="EfObjectContext.cs" />
     <Compile Include="EfRepository.cs" />
