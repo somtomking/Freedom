@@ -1814,6 +1814,8 @@
     <Content Include="Views\web.config" />
     <Content Include="packages.config" />
     <Content Include="Views\Account\Index.cshtml" />
+    <Content Include="Themes\Default\Views\Account\Index.cshtml" />
+    <Content Include="Themes\Default\Views\web.config" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -1828,7 +1830,6 @@
     <Folder Include="Areas\Admin\Content\mustache\php\_cache\" />
     <Folder Include="Areas\Admin\Models\" />
     <Folder Include="Models\" />
-    <Folder Include="Themes\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Freedom.Data\Freedom.Data.csproj">
