@@ -1135,7 +1135,6 @@
     <Content Include="Areas\Admin\Views\web.config" />
     <Content Include="Areas\Admin\Views\_ViewStart.cshtml" />
     <Content Include="Areas\Admin\Views\Shared\_Layout.cshtml" />
-    <Content Include="Areas\Admin\Views\Home\Index.cshtml" />
     <Content Include="Areas\Admin\Content\assets\css\less\ace-features.less" />
     <Content Include="Areas\Admin\Content\assets\css\less\ace-nav.less" />
     <Content Include="Areas\Admin\Content\assets\css\less\ace-responsive.less" />
@@ -1783,6 +1782,8 @@
     <Content Include="Areas\Admin\Content\mustache\php\vendor\Mustache\Parser.php" />
     <Content Include="Areas\Admin\Content\mustache\php\vendor\Mustache\Template.php" />
     <Content Include="Areas\Admin\Content\mustache\php\vendor\Mustache\Tokenizer.php" />
+    <Content Include="Areas\Admin\Views\Home\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\Test\Index.cshtml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
@@ -1803,6 +1804,7 @@
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Areas\Admin\AdminAreaRegistration.cs" />
     <Compile Include="Areas\Admin\Controllers\HomeController.cs" />
+    <Compile Include="Areas\Admin\Controllers\TestController.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Global.asax.cs">

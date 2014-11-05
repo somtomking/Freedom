@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System.Web.Hosting;
 using System.Xml;
 
 
@@ -22,9 +23,10 @@ namespace Freedom.Web.Framework.Themes
         public ThemeProvider(AppConfig config)
         {
             //TODO:这里是写死了
-            basePath = System.Web.HttpContext.Current.Server.MapPath(config.ThemeBasePath);
+            basePath = GetBasePath(config.ThemeBasePath);
             LoadConfigurations();
         }
+  
 
         #endregion
 
@@ -50,6 +52,21 @@ namespace Freedom.Web.Framework.Themes
 
         #region Utility
 
+        private string GetBasePath(string path)
+        {
+            if (HostingEnvironment.IsHosted)
+            {
+                //hosted
+                return HostingEnvironment.MapPath(path);
+            }
+            else
+            {
+                //not hosted. For example, run in unit tests
+                string baseDirectory = AppDomain.CurrentDomain.BaseDirectory;
+                path = path.Replace("~/", "").TrimStart('/').Replace('/', '\\');
+                return Path.Combine(baseDirectory, path);
+            }
+        }
         private void LoadConfigurations()
         {
             //TODO:Use IFileStorage?
