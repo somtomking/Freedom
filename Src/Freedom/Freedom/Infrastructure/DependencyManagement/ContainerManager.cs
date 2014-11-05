@@ -82,17 +82,17 @@ namespace Freedom.Infrastructure.DependencyManagement
                     foreach (var parameter in parameters)
                     {
                         var service = Resolve(parameter.ParameterType, scope);
-                        if (service == null) throw new NopException("Unkown dependency");
+                        if (service == null) throw new FreedomException("Unkown dependency");
                         parameterInstances.Add(service);
                     }
                     return Activator.CreateInstance(type, parameterInstances.ToArray());
                 }
-                catch (NopException)
+                catch (FreedomException)
                 {
 
                 }
             }
-            throw new NopException("No contructor was found that had all the dependencies satisfied.");
+            throw new FreedomException("No contructor was found that had all the dependencies satisfied.");
         }
         
         public bool TryResolve(Type serviceType, ILifetimeScope scope, out object instance)

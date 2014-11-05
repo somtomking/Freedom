@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Freedom.Configuration;
+using System;
 using System.Collections.Generic;
 using System.Reflection;
 using System.Web;
@@ -22,9 +23,9 @@ namespace Freedom.Infrastructure
 
         #region Ctor
 
-        public WebAppTypeFinder()
+        public WebAppTypeFinder(AppConfig config)
         {
-            this._ensureBinFolderAssembliesLoaded = true;
+            this._ensureBinFolderAssembliesLoaded = config.DynamicDiscovery;
         }
 
         #endregion
