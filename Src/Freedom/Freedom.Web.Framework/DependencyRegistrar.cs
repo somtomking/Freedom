@@ -4,6 +4,7 @@ using Autofac.Integration.WebApi;
 using Freedom.Infrastructure;
 using Freedom.Infrastructure.DependencyManagement;
 using Freedom.Web.Framework.Themes;
+using Freedom.Web.Framework.UI;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -21,6 +22,7 @@ namespace Freedom.Web.Framework
             //theme
             builder.RegisterType<ThemeProvider>().As<IThemeProvider>().InstancePerLifetimeScope();
             builder.RegisterType<ThemeContext>().As<IThemeContext>().InstancePerLifetimeScope();
+            builder.RegisterType<PageHeadBuilder>().As<IPageHeadBuilder>().InstancePerLifetimeScope();
         }
 
         public int Order

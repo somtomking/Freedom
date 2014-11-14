@@ -2271,6 +2271,10 @@
     <Content Include="Areas\Admin\Content\kendo.2014.1.318\kendo.view.min.js.map" />
     <Content Include="Areas\Admin\Content\kendo.2014.1.318\kendo.web.min.js.map" />
     <Content Include="Areas\Admin\Content\kendo.2014.1.318\kendo.window.min.js.map" />
+    <Content Include="Areas\Admin\Views\Shared\Menu.cshtml" />
+    <Content Include="Areas\Admin\Views\Shared\Breadcrumbs.cshtml" />
+    <Content Include="Areas\Admin\Views\Shared\SettingBox.cshtml" />
+    <Content Include="Areas\Admin\Views\Shared\Navbar.cshtml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
@@ -2291,6 +2295,7 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Areas\Admin\AdminAreaRegistration.cs" />
+    <Compile Include="Areas\Admin\Controllers\CommonController.cs" />
     <Compile Include="Areas\Admin\Controllers\HomeController.cs" />
     <Compile Include="Areas\Admin\Controllers\TestController.cs" />
     <Compile Include="Controllers\AccountController.cs" />
@@ -2320,6 +2325,7 @@
     <Folder Include="Areas\Admin\Content\mustache\php\_cache\" />
     <Folder Include="Areas\Admin\Models\" />
     <Folder Include="Areas\Admin\Scripts\" />
+    <Folder Include="Areas\Admin\Views\Common\" />
     <Folder Include="Areas\Admin\Views\Shared\EditorTemplates\" />
     <Folder Include="Models\" />
   </ItemGroup>
