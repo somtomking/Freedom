@@ -132,7 +132,9 @@
     <Compile Include="Models\Menus\MenuDisplayMode.cs" />
     <Compile Include="Models\Menus\MenuItemLevel.cs" />
     <Compile Include="Models\Menus\MenuItemModel.cs" />
+    <Compile Include="Models\Menus\MenuItemBaseModel.cs" />
     <Compile Include="Models\Menus\MenuModel.cs" />
+    <Compile Include="Models\Menus\MenuShotCutItemModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

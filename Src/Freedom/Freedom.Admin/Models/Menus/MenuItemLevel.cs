@@ -7,9 +7,9 @@ namespace Freedom.Admin.Models.Menus
 {
     public enum MenuItemLevel : int
     {
-        Lvl0 ,
-        Lvl1 ,
-        Lvl2 ,
-        Lvl3 ,
+        Lv1 ,
+        Lv2 ,
+        Lv3 ,
+        Lv4 ,
     }
 }

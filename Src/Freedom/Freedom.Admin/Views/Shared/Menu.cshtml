@@ -1,31 +1,27 @@
-﻿@model Freedom.Admin.Models.Menus.MenuModel
+﻿@using Freedom.Admin.Models.Menus
+@model MenuModel
 
 <div id="sidebar" class="sidebar   responsive">
     <script type="text/javascript">
         try { ace.settings.check('sidebar', 'fixed') } catch (e) { }
     </script>
-    @if (Model.ShowShotCuts)
+    @if ((Model.ShowShotCuts && Model.ShotCutItems.Count > 0))
     {
 
 
         <div class="sidebar-shortcuts" id="sidebar-shortcuts">
             <div class="sidebar-shortcuts-large" id="sidebar-shortcuts-large">
-                <button class="btn btn-success">
-                    <i class="ace-icon fa fa-signal"></i>
-                </button>
 
-                <button class="btn btn-info">
-                    <i class="ace-icon fa fa-pencil"></i>
-                </button>
+                @foreach (var shotCutItem in Model.ShotCutItems)
+                {
+                    <a class="btn @shotCutItem.InfoCss" href="@Url.Action("Index")">
+                        <i class="ace-icon fa @shotCutItem.IconCss"></i>
 
-                <!-- #section:basics/sidebar.layout.shortcuts -->
-                <button class="btn btn-warning">
-                    <i class="ace-icon fa fa-users"></i>
-                </button>
+                    </a>
+                }
 
-                <button class="btn btn-danger">
-                    <i class="ace-icon fa fa-cogs"></i>
-                </button>
+
+
 
                 <!-- /section:basics/sidebar.layout.shortcuts -->
             </div>
@@ -42,7 +38,37 @@
         </div><!-- /.sidebar-shortcuts -->
     }
 
+    @if (Model.MainItems.Count > 0)
+    {
+        <ul class="nav nav-list" style="top: 0px;">
+            @foreach (var mainItem in Model.MainItems)
+            {
 
+            }
+        </ul>
+    }
+
+    @helper BuildeUrlItem(MenuItemModel item)
+{
+      <li class="active">
+            <a href="@item.Url">
+                <i class="menu-icon fa @item.IconCss"></i>
+                <span class="menu-text"> @item.Text </span>
+            </a>
+            <b class="arrow"></b>
+        </li>
+}
+
+    @helper BuildeMenuLv1Item(MenuItemModel item)
+{
+    <li class="hsub" class="dropdown-toggle">
+        <a href="#">
+            <i class="menu-icon fa @item.IconCss"></i>
+            <span class="menu-text"> @item.Text </span>
+        </a>
+        <b class="arrow"></b>
+    </li>
+}
 
     <ul class="nav nav-list" style="top: 0px;">
         <li class="active">
