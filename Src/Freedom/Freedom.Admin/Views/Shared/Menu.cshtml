@@ -41,34 +41,50 @@
     @if (Model.MainItems.Count > 0)
     {
         <ul class="nav nav-list" style="top: 0px;">
-            @foreach (var mainItem in Model.MainItems)
+            @foreach (var lv1Item in Model.MainItems)
             {
+                if (lv1Item.HasChildren())
+                {
 
+               
+
+                    foreach (var lv2Item in lv1Item.Children)
+                    {
+                        if (lv2Item.HasChildren())
+                        {
+                            foreach (var lv3Item in lv2Item.Children)
+                            {
+                                BuildeUrlItem(lv3Item);
+                            }
+                        }
+                        else
+                        {
+                            BuildeUrlItem(lv2Item);
+                        }
+
+                    }
+
+                }
+                else
+                {
+                    BuildeUrlItem(lv1Item);
+                }
             }
         </ul>
     }
 
     @helper BuildeUrlItem(MenuItemModel item)
 {
-      <li class="active">
-            <a href="@item.Url">
-                <i class="menu-icon fa @item.IconCss"></i>
-                <span class="menu-text"> @item.Text </span>
-            </a>
-            <b class="arrow"></b>
-        </li>
-}
-
-    @helper BuildeMenuLv1Item(MenuItemModel item)
-{
-    <li class="hsub" class="dropdown-toggle">
-        <a href="#">
+    <li class="active">
+        <a href="@item.Url">
             <i class="menu-icon fa @item.IconCss"></i>
             <span class="menu-text"> @item.Text </span>
         </a>
         <b class="arrow"></b>
     </li>
 }
+
+
 
     <ul class="nav nav-list" style="top: 0px;">
         <li class="active">
