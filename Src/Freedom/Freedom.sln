@@ -13,6 +13,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Freedom.Web", "Freedom.Web\
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Freedom.Web.Framework", "Freedom.Web.Framework\Freedom.Web.Framework.csproj", "{FC65D68B-24DA-4081-BF74-CDE058E5DF16}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Freedom.Admin", "Freedom.Admin\Freedom.Admin.csproj", "{64AB4D98-781E-41D3-9FA5-D46473886314}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,6 +41,10 @@ Global
 		{FC65D68B-24DA-4081-BF74-CDE058E5DF16}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FC65D68B-24DA-4081-BF74-CDE058E5DF16}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{FC65D68B-24DA-4081-BF74-CDE058E5DF16}.Release|Any CPU.Build.0 = Release|Any CPU
+		{64AB4D98-781E-41D3-9FA5-D46473886314}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{64AB4D98-781E-41D3-9FA5-D46473886314}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{64AB4D98-781E-41D3-9FA5-D46473886314}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{64AB4D98-781E-41D3-9FA5-D46473886314}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
