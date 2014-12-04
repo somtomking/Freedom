@@ -46,8 +46,6 @@
                 if (lv1Item.HasChildren())
                 {
 
-               
-
                     foreach (var lv2Item in lv1Item.Children)
                     {
                         if (lv2Item.HasChildren())
@@ -73,9 +71,35 @@
         </ul>
     }
 
-    @helper BuildeUrlItem(MenuItemModel item)
+    @helper BuildItem(MenuItemModel item)
 {
-    <li class="active">
+    if (item.HasChildren())
+    {
+        <ul>
+            @foreach (var childItem in item.Children)
+            {
+                
+                if (childItem.HasChildren())
+                {
+                    
+                    BuildItem(item);
+                }
+                else
+                {
+                    BuildUrlItem(item);
+                }
+            }
+        </ul>
+    }
+    else
+    {
+        BuildUrlItem(item);
+    }
+}
+
+    @helper BuildUrlItem(MenuItemModel item)
+{
+    <li @(item.Active?"class='active'"?"")>
         <a href="@item.Url">
             <i class="menu-icon fa @item.IconCss"></i>
             <span class="menu-text"> @item.Text </span>
