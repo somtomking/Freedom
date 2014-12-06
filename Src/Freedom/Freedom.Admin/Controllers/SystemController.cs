@@ -28,13 +28,13 @@ namespace Freedom.Admin.Controllers
         #region Test
         private void PrepareMenuModelTest(MenuModel model)
         {
-            for (int loop = 0; loop < 15; loop++)
+            for (int loop = 0; loop < 10; loop++)
             {
                 var item = new MenuItemModel();
                 item.Text = "test";
                 item.Url = Url.Action();
                 item.IconCss = "fa-desktop";
-                for (int loop2 = 0; loop2 < 20; loop2++)
+                for (int loop2 = 0; loop2 < 5; loop2++)
                 {
                     var item2 = new MenuItemModel();
                     item2.Text = "test";
@@ -42,15 +42,7 @@ namespace Freedom.Admin.Controllers
                     item2.IconCss = "fa-desktop";
                     item.Children.Add(item2);
 
-                    for (int loop3 = 0; loop3 < 15; loop3++)
-                    {
-                        var item3 = new MenuItemModel();
-                        item3.Text = "test";
-                        item3.Url = Url.Action();
-                        item3.IconCss = "fa-desktop";
-                        item2.Children.Add(item3);
-
-                    }
+             
 
 
                 }
