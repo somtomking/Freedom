@@ -10,6 +10,13 @@ namespace Freedom.Admin.Controllers
     public class SystemController : Controller
     {
         #region Menus
+        /// <summary>
+        /// 1级菜单建议不超过15个
+        /// 2级菜单建议不超过10个
+        /// 3级菜单建议不超过7个
+        /// 4级菜单建议最好不要有，会影响客户端性能
+        /// </summary>
+        /// <returns></returns>
         [ChildActionOnly]
         public ActionResult MainMenu()
         {
@@ -21,21 +28,21 @@ namespace Freedom.Admin.Controllers
         #region Test
         private void PrepareMenuModelTest(MenuModel model)
         {
-            for (int loop = 0; loop < 2; loop++)
+            for (int loop = 0; loop < 15; loop++)
             {
-                var item= new MenuItemModel();
+                var item = new MenuItemModel();
                 item.Text = "test";
                 item.Url = Url.Action();
                 item.IconCss = "fa-desktop";
-                for (int loop2 = 0; loop2 < 2; loop2++)
+                for (int loop2 = 0; loop2 < 20; loop2++)
                 {
-                    var item2= new MenuItemModel();
+                    var item2 = new MenuItemModel();
                     item2.Text = "test";
                     item2.Url = Url.Action();
                     item2.IconCss = "fa-desktop";
                     item.Children.Add(item2);
 
-                    for (int loop3 = 0; loop3 < 2; loop3++)
+                    for (int loop3 = 0; loop3 < 15; loop3++)
                     {
                         var item3 = new MenuItemModel();
                         item3.Text = "test";
@@ -43,16 +50,8 @@ namespace Freedom.Admin.Controllers
                         item3.IconCss = "fa-desktop";
                         item2.Children.Add(item3);
 
-
-                        for (int loop4 = 0; loop4 < 2; loop4++)
-                        {
-                            var item4 = new MenuItemModel();
-                            item4.Text = "test";
-                            item4.Url = Url.Action();
-                            item4.IconCss = "fa-desktop";
-                            item3.Children.Add(item4);
-                        }
                     }
+
 
                 }
                 model.MainItems.Add(item);
