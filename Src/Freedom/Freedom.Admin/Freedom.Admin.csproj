@@ -116,7 +116,6 @@
     <Folder Include="Content\Ace\mustache\app\views\pages\partials\_shared\" />
     <Folder Include="Content\Ace\mustache\js\output\" />
     <Folder Include="Content\Ace\mustache\php\_cache\" />
-    <Folder Include="Models\Common\" />
     <Folder Include="Views\Shared\EditorTemplates\" />
   </ItemGroup>
   <ItemGroup>
@@ -124,17 +123,18 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\SystemController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Infrastructure\BaseController.cs" />
     <Compile Include="Infrastructure\UserAuthentication.cs" />
-    <Compile Include="Models\Menus\MenuDisplayMode.cs" />
-    <Compile Include="Models\Menus\MenuItemLevel.cs" />
-    <Compile Include="Models\Menus\MenuItemModel.cs" />
-    <Compile Include="Models\Menus\MenuItemBaseModel.cs" />
-    <Compile Include="Models\Menus\MenuModel.cs" />
-    <Compile Include="Models\Menus\MenuShotCutItemModel.cs" />
+    <Compile Include="Models\Systems\MenuDisplayMode.cs" />
+    <Compile Include="Models\Systems\MenuItemLevel.cs" />
+    <Compile Include="Models\Systems\MenuItemModel.cs" />
+    <Compile Include="Models\Systems\MenuItemBaseModel.cs" />
+    <Compile Include="Models\Systems\MenuModel.cs" />
+    <Compile Include="Models\Systems\MenuShotCutItemModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -1844,7 +1844,7 @@
     <Content Include="Views\Shared\Menu1.cshtml" />
     <Content Include="Views\Shared\Navbar.cshtml" />
     <Content Include="Views\Shared\SettingBox.cshtml" />
-    <Content Include="Views\Shared\Menu.cshtml" />
+    <Content Include="Views\System\MainMenu.cshtml" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>

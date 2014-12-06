@@ -1,6 +1,4 @@
-﻿@{
-    var menus = ViewBag.Menus as Freedom.Admin.Models.Menus.MenuModel;
-}
+﻿ 
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -56,7 +54,7 @@
         </script>
 
         <!-- #section:basics/sidebar -->
-        @Html.Partial("Menu", menus)
+        @Html.Action("MainMenu","System")
 
         <!-- /section:basics/sidebar -->
         <div class="main-content">

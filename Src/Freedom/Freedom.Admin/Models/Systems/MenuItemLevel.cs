@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 
-namespace Freedom.Admin.Models.Menus
+namespace Freedom.Admin.Models.Systems
 {
     public enum MenuItemLevel : int
     {

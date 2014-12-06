@@ -6,7 +6,7 @@ using System.Web.Mvc;
 
 namespace Freedom.Admin.Infrastructure
 {
-    [UserAuthentication]
+   // [UserAuthentication]
     public class BaseController : Controller
     {
        

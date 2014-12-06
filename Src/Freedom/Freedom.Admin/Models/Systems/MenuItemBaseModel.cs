@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 
-namespace Freedom.Admin.Models.Menus
+namespace Freedom.Admin.Models.Systems
 {
     public class MenuItemBaseModel
     {
@@ -12,7 +12,7 @@ namespace Freedom.Admin.Models.Menus
         public bool NewWindowOpen { get; set; }
 
         public int Order { get; set; }
-
+       
         public string IconCss { get; set; }
 
         public bool HasUrl()
