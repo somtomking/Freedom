@@ -1,0 +1,40 @@
+﻿@model MvcSiteMapProvider.Web.Html.Models.SiteMapPathHelperModel
+@using System.Web.Mvc.Html
+@using System.Linq
+@using MvcSiteMapProvider.Web.Html.Models
+<ul class="breadcrumb">
+  @foreach (var node in Model)
+  {
+    if (node.IsRootNode)
+    {
+      <li>
+        <i class="ace-icon fa fa-home home-icon"></i>
+        <a href="@node.Url">@node.Title</a>
+      </li>
+    }
+    else if (node.IsCurrentNode)
+    {
+      <li class="active">@node.Title</li>
+    }
+    else
+    {
+      <li>
+        <a href="@node.Url">@node.Title</a>
+      </li>
+    }
+
+
+
+  }
+</ul>
+  @*<ul class="breadcrumb">
+      <li>
+        <i class="ace-icon fa fa-home home-icon"></i>
+        <a href="#">Home</a>
+      </li>
+
+      <li>
+        <a href="#">UI &amp; Elements</a>
+      </li>
+      <li class="active">Typography</li>
+    </ul>*@
